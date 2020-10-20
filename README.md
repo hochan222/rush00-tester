@@ -13,6 +13,26 @@ If you have a test case you want to add, please leave it as a PR or Issue! It's 
 
 ### 사용방법
 
+```
+.
+├── ft_putchar.c
+├── rush00.c
+├── rush01.c
+├── rush02.c
+├── rush03.c
+├── rush04.c
+├── _rush00-tester
+|   ├── _includes
+|   ├── _maps
+|   ├── _src
+|   ├── .gitignore
+|   ├── LICENSE
+|   └── README.md
+|   └── test.sh
+|   ├── ...
+└── ...
+```
+
 다음 파일들이 있는 폴더 안에 <code>git clone</code> 해주세요.  
 <code>git clone</code> in the folder containing the following files.
 
