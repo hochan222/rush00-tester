@@ -45,5 +45,8 @@ cd rush00-tester
 sh test.sh
 ```
 
+### Patch Note
+
+- Extend 121 testcases (11 x 11) | 2020.10
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!

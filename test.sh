@@ -15,7 +15,7 @@ CLEAR_COLOR="\033[m"
 # 4 for rush00.c ~ rush04.c
 RUSH_COUNT=4
 # General Testcase Count
-RUSH_GENERAL_TESTCASE=5
+RUSH_GENERAL_TESTCASE=10
 
 function prompt {
 	clear
