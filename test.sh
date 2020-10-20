@@ -1,3 +1,13 @@
+# Color
+RED_COLOR="\033[31m"
+LIGHT_RED_COLOR="\033[31m\033[01m"
+GREEN_COLOR="\033[32m"
+LIGHT_GREEN_COLOR="\033[32m\033[01m"
+YELLOW_COLOR="\033[33m"
+BLUE_COLOR="\033[34m"
+LIGHT_BLUE_COLOR="\033[34m\033[01m"
+LIGHT_SKYBLUE_COLOR="\033[36m\033[01m"
+# Background color
 SUCCESS_COLOR="\033[42;1;37m"
 FAIL_COLOR="\033[41;5;11m"
 CLEAR_COLOR="\033[m"
@@ -7,8 +17,17 @@ RUSH_COUNT=4
 # General Testcase Count
 RUSH_GENERAL_TESTCASE=5
 
-echo "Check file list"
-echo "================================="
+function prompt {
+	clear
+	echo "${LIGHT_RED_COLOR}Run this script in the folder you created that contains ft_putchar and rush files."
+	echo "Any invalid behavior in your program is treated as a test failure." 
+	echo "${LIGHT_SKYBLUE_COLOR}For additional test cases or other inquiries, please contact at the address below. :)\n\n"
+	echo "     Github: hochan222."
+	echo "     Email : hochan049@gmail.co${CLEAR_COLOR}\n"
+	echo "\n\n${LIGHT_GREEN_COLOR}PRESS ENTER : ${CLEAR_COLOR}"
+	read
+	clear
+}
 
 function isfile {
 	local PATH='../'$1 
@@ -53,17 +72,19 @@ function evaluation {
 	done
 }
 
+prompt 
+
 # ft_putchar File
 isfile ft_putchar.c
 if [ $? -eq 0 ]
 then
 	echo "\n================================="
-	echo "ft_putchar.c ${SUCCESS_COLOR}file exist${CLEAR_COLOR}"
+	echo "${GREEN_COLOR}ft_putchar.c ${SUCCESS_COLOR}file exist${CLEAR_COLOR}"
 	echo "================================="
 	addHeader ft_putchar.c
 else
 	echo "\n================================="
-	echo "ft_putchar.c ${FAIL_COLOR}file not exist${CLEAR_COLOR}"
+	echo "${RED_COLOR}ft_putchar.c ${FAIL_COLOR}file not exist${CLEAR_COLOR}"
 	echo "================================="
 fi
 
@@ -75,13 +96,13 @@ do
 	if [ $? -eq 0 ]
 	then
 		echo "\n================================="
-		echo "${RUSH_FILE} ${SUCCESS_COLOR}file exist${CLEAR_COLOR}"
+		echo "${GREEN_COLOR}${RUSH_FILE} ${SUCCESS_COLOR}file exist${CLEAR_COLOR}"
 		echo "================================="
 		makefile $RUSH_FILE rush0${i}
 		evaluation rush0${i}
 	else
 		echo "\n================================="
-		echo "${RUSH_FILE} ${FAIL_COLOR}file not exist${CLEAR_COLOR}"
+		echo "${RED_COLOR}${RUSH_FILE} ${FAIL_COLOR}file not exist${CLEAR_COLOR}"
 		echo "================================="
 	fi
 done
