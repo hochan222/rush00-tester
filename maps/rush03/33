@@ -1,0 +1,3 @@
+ABBBC
+B   B
+ABBBC

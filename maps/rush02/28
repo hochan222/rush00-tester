@@ -1,0 +1,4 @@
+ABBA
+B  B
+B  B
+CBBC
