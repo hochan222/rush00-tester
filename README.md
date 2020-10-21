@@ -48,6 +48,8 @@ sh test.sh
 > 생성된 result 파일에 diff 기록이 생성됩니다.
 > A diff record is created in the generated result file.
 
+<img src="https://user-images.githubusercontent.com/22424891/96731034-c8b0ad00-13f1-11eb-81e8-c896fc0d6cd5.png" height="200px" />
+
 ### How to contribute to rush00-tester
 
 1. Please refer to the guide at the bottom of the test.sh file first.
