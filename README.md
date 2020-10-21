@@ -66,6 +66,7 @@ sh test.sh
 # *
 # *	This function is used to display test cases by dividing them into sections.
 # *	
+# * @param	string	The name of rush file to run.
 # * @param	string	Please write the section to be printed
 # * @return	void
 ```
