@@ -47,13 +47,17 @@ function isSuccess {
 	fi
 }
 
-function considerNegative {
-	if [ $? -eq 0 ]
-	then
-		echo "$1 ${SUCCESS_COLOR}SUCCESS${CLEAR_COLOR}"
-	else
-		echo "$1 ${RUSH_FILE} ${FAIL_COLOR}FAIL${CLEAR_COLOR}"
-	fi
+function customEcho {
+	echo "\n================================="
+	echo "${LIGHT_BLUE_COLOR}$1${GREEN_COLOR} $2${CLEAR_COLOR}"
+	echo "================================="
+}
+
+function customEvaluation {
+	mkdir -p output/$1/custom
+	./$1 $2 $3 > ./output/$1/custom/$4
+	diff -u ./output/$1/custom/$4 ./maps/$1/custom/$4
+	isSuccess "$1 rush($2, $3), File: $1/$4"
 }
 
 function addHeader {
@@ -116,5 +120,64 @@ do
 	fi
 done
 
-# ./rush00 0 -1 > ./test
-# echo $?
+# ======================================================================================================
+# * Please PR by adding it according to the format below this!
+# * Two functions created will help you in adding test cases.
+# * We will reflect after review :)
+# * 
+# * < Function: customEvaluation >
+# * 
+# * When adding a test case, use this function to add it.
+# * 
+# * @param	string	The name of rush file to run.
+# * @param	int		The first argument i in the rush(i, j) function.
+# * @param	int		The second argument j in the rush(i, j) function.
+# * @param	int		The name of the file to be saved. 
+# * 				It increases in order from 0, and add 1 value from the previous test case.
+# * @return	void
+# *
+# * < Function: customEcho >
+# *
+# *	This function is used to display test cases by dividing them into sections.
+# *	
+# *	@param	string	Please write the section to be printed
+# * @return	void
+# *
+# * For other inquiries, please slack with holee. Thank you. :)
+# ======================================================================================================
+
+# =================
+# < Custom Rush00 >
+# =================
+
+customEcho rush00 considerNegative
+customEvaluation rush00 0 -1 0
+customEvaluation rush00 -10 -1 1
+
+# =================
+# < Custom Rush01 >
+# =================
+customEcho rush01 considerNegative
+customEvaluation rush01 0 -1 0
+customEvaluation rush01 -10 -1 1
+
+# =================
+# < Custom Rush02 >
+# =================
+customEcho rush02 considerNegative
+customEvaluation rush02 0 -1 0
+customEvaluation rush02 -10 -1 1
+
+# =================
+# < Custom Rush03 >
+# =================
+customEcho rush03 considerNegative
+customEvaluation rush03 0 -1 0
+customEvaluation rush03 -10 -1 1
+
+# =================
+# < Custom Rush04 >
+# =================
+customEcho rush04 considerNegative
+customEvaluation rush04 0 -1 0
+customEvaluation rush04 -10 -1 1

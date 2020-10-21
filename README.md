@@ -45,8 +45,53 @@ cd rush00-tester
 sh test.sh
 ```
 
+### How to contribute to rush00-tester
+
+1. Please refer to the guide at the bottom of the test.sh file first.
+    - There are function descriptions and how to use them.
+    - Function: customEvaluation, customEcho
+```sh
+# * < Function: customEvaluation >
+# * 
+# * When adding a test case, use this function to add it.
+# * 
+# * @param	string	The name of rush file to run.
+# * @param	int		The first argument i in the rush(i, j) function.
+# * @param	int		The second argument j in the rush(i, j) function.
+# * @param	int		The name of the file to be saved. 
+# * 				It increases in order from 0, and add 1 value from the previous test case.
+# * @return	void
+# *
+# * < Function: customEcho >
+# *
+# *	This function is used to display test cases by dividing them into sections.
+# *	
+# * @param	string	Please write the section to be printed
+# * @return	void
+```
+2. Please check if there are any test cases that overlap with previous test cases.
+
+```sh
+# =================
+# < Custom Rush0X >
+# =================
+```
+3. Add the test case to the appropriately named comment location. The comments are as above. Here is an additional example:
+```sh
+customEcho rush00 considerNegative
+customEvaluation rush00 0 -1 0
+```
+4. Add the test case output file to the maps/rush0X/custom folder at the last number.
+5. For other inquiries, please slack with holee. Thank you. :)
+
+### norminette
+
+> norminette -R CheckForbiddenSourceHeader
+
 ### Patch Note
 
 - Extend 121 testcases (11 x 11) | 2020.10
+- Add negative testcases | 2020.10
+
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!
