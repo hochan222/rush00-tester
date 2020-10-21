@@ -43,6 +43,7 @@ function isSuccess {
 	then
 		echo "$1 ${SUCCESS_COLOR}SUCCESS${CLEAR_COLOR}"
 	else
+		echo ">> $1 ">> result
 		echo "$1 ${RUSH_FILE} ${FAIL_COLOR}FAIL${CLEAR_COLOR}"
 	fi
 }
@@ -56,7 +57,7 @@ function customEcho {
 function customEvaluation {
 	mkdir -p output/$1/custom
 	./$1 $2 $3 > ./output/$1/custom/$4
-	diff -u ./output/$1/custom/$4 ./maps/$1/custom/$4
+	diff -u ./output/$1/custom/$4 ./maps/$1/custom/$4 >> result
 	isSuccess "$1 rush($2, $3), File: $1/$4"
 }
 
@@ -78,7 +79,7 @@ function evaluation {
 		for j in `seq 0 ${RUSH_GENERAL_TESTCASE}`
 		do
 			./$1 ${i} ${j} > ./output/$1/${count}
-			diff -u ./output/$1/${count} ./maps/$1/${count}
+			diff -u ./output/$1/${count} ./maps/$1/${count} >> result
 			isSuccess "Input rush(${i}, ${j}), File: $1/${count}"
 			count=$(($count+1))
 		done
@@ -86,6 +87,9 @@ function evaluation {
 }
 
 prompt 
+
+# delete result file
+rm -rf result
 
 # ft_putchar File
 isfile ft_putchar.c
