@@ -9,7 +9,7 @@ Use it for problem solving and peer evaluation.
 [How to use](#사용방법)  
 If you have a test case you want to add, please leave it as a PR or Issue! It's always welcome :)  
 
-![test](https://user-images.githubusercontent.com/22424891/96619287-f0940800-1340-11eb-998c-41bfbc54f634.gif)  
+![test](https://user-images.githubusercontent.com/22424891/96735404-82aa1800-13f6-11eb-9fd7-b7fb84210043.gif)  
 
 ### 사용방법
 
