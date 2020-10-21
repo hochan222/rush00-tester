@@ -45,6 +45,9 @@ cd rush00-tester
 sh test.sh
 ```
 
+> 생성된 result 파일에 diff 기록이 생성됩니다.
+> A diff record is created in the generated result file.
+
 ### How to contribute to rush00-tester
 
 1. Please refer to the guide at the bottom of the test.sh file first.
