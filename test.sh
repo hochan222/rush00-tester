@@ -47,6 +47,15 @@ function isSuccess {
 	fi
 }
 
+function considerNegative {
+	if [ $? -eq 0 ]
+	then
+		echo "$1 ${SUCCESS_COLOR}SUCCESS${CLEAR_COLOR}"
+	else
+		echo "$1 ${RUSH_FILE} ${FAIL_COLOR}FAIL${CLEAR_COLOR}"
+	fi
+}
+
 function addHeader {
 	awk '{ if (NR==13) { print "#include \"rush.h\"\n"; print $0 } else { print $0 } }' ../$1 > ./src/$1
 }
@@ -66,7 +75,7 @@ function evaluation {
 		do
 			./$1 ${i} ${j} > ./output/$1/${count}
 			diff -u ./output/$1/${count} ./maps/$1/${count}
-			isSuccess "File: $1/${count}"
+			isSuccess "Input rush(${i}, ${j}), File: $1/${count}"
 			count=$(($count+1))
 		done
 	done
@@ -106,3 +115,6 @@ do
 		echo "================================="
 	fi
 done
+
+# ./rush00 0 -1 > ./test
+# echo $?
