@@ -82,7 +82,8 @@ customEcho rush00 considerNegative
 customEvaluation rush00 0 -1 0
 ```
 4. Add the test case output file to the maps/rush0X/custom folder at the last number.
-5. For other inquiries, please slack with holee. Thank you. :)
+5. Please send PR including explanation and result screen.
+6. For other inquiries, please slack with holee. Thank you. :)
 
 ### norminette
 
