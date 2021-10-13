@@ -2,6 +2,18 @@
 .DS_Store
 .dSYM
 output/
+result/
+rush00
+rush01
+rush02
+rush03
+rush04
+src/ft_putchar.c
+src/rush00.c
+src/rush01.c
+src/rush02.c
+src/rush03.c
+src/rush04.c
 
 # Prerequisites
 *.d
