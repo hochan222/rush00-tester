@@ -101,5 +101,20 @@ customEvaluation rush00 0 -1 0
 - Extend 121 testcases (11 x 11) | 2020.10
 - Add negative testcases | 2020.10
 
+### Contributor
+
+<table>
+  <tr>
+    <td align="center"><a href="https://github.com/hochan222"><img src="https://avatars3.githubusercontent.com/u/22424891?s=100&v=4" alt="@hochan222" /><br /><sub><b>holee</b></sub></a>
+    <br />
+    <!-- <a href="#question-kentcdodds" title="Answering Questions">💬</a> -->
+    </td>
+    <td align="center"><a href="https://github.com/ji-junhyuk"><img src="https://avatars.githubusercontent.com/u/67992469?s=100&v=4" alt="@ji-junhyuk" /><br /><sub><b>ji-junhyuk</b></sub></a>
+    <br />
+    <a href="https://github.com/hochan222/rush00-tester/issues/1" title="Answering Questions">💬</a>
+    </td>
+    </tr>
+</table>
+
 - - -
 기타 문의 사항은 Slack ID holee로 DM 주세요!
