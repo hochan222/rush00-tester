@@ -17,7 +17,7 @@ RUSH_COUNT=4
 # General Testcase Count
 RUSH_GENERAL_TESTCASE=10
 
-function prompt {
+prompt() {
 	clear
 	echo "${LIGHT_RED_COLOR}Run this script in the folder you created that contains ft_putchar and rush files."
 	echo "Any invalid behavior in your program is treated as a test failure." 
@@ -29,7 +29,7 @@ function prompt {
 	clear
 }
 
-function isfile {
+isfile() {
 	local PATH='../'$1 
 	if test -f $PATH;then
 		return 0
@@ -38,7 +38,7 @@ function isfile {
 	fi
 }
 
-function isSuccess {
+isSuccess() {
 	if [ $? -eq 0 ]
 	then
 		echo "$1 ${SUCCESS_COLOR}SUCCESS${CLEAR_COLOR}"
@@ -48,29 +48,29 @@ function isSuccess {
 	fi
 }
 
-function customEcho {
+customEcho() {
 	echo "\n================================="
 	echo "${LIGHT_BLUE_COLOR}$1${GREEN_COLOR} $2${CLEAR_COLOR}"
 	echo "================================="
 }
 
-function customEvaluation {
+customEvaluation() {
 	mkdir -p output/$1/custom
 	./$1 $2 $3 > ./output/$1/custom/$4
 	diff -u ./output/$1/custom/$4 ./maps/$1/custom/$4 >> result
 	isSuccess "$1 rush($2, $3), File: $1/$4"
 }
 
-function addHeader {
+addHeader() {
 	awk '{ if (NR==13) { print "#include \"rush.h\"\n"; print $0 } else { print $0 } }' ../$1 > ./src/$1
 }
 
-function makefile {
+makefile() {
 	addHeader $1
 	gcc -Wall -Wextra -Werror -g -I ./includes/ ./src/ft_putchar.c ./src/$1 ./src/main.c -o $2
 }
 
-function evaluation {
+evaluation() {
 	local count=0
 	mkdir -p output/$1
 
